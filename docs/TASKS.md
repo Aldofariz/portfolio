@@ -1,0 +1,265 @@
+# TASKS.md
+
+## Development Task Checklist
+
+Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent harus mengerjakan task secara bertahap dan memperbarui status setiap task setelah selesai.
+
+**Status:**
+
+- [ ] Not Started
+- [x] Completed
+
+---
+
+## Phase 0 — Project Initialization
+
+- [ ] Initialize Next.js project using App Router.
+- [ ] Configure TypeScript.
+- [ ] Configure Tailwind CSS.
+- [ ] Install and configure required dependencies.
+- [ ] Establish the initial project folder structure.
+- [ ] Configure environment variable handling.
+- [ ] Create the initial application layout.
+- [ ] Verify that the application runs locally.
+
+**Acceptance Criteria:**
+
+- Next.js application runs successfully in the local environment.
+- TypeScript and Tailwind CSS are configured.
+- Required dependencies are installed.
+- Project structure follows `ARCHITECTURE.md`.
+
+## Phase 1 — Supabase & Database Setup
+
+- [ ] Create Supabase client configuration.
+- [ ] Configure Supabase environment variables.
+- [ ] Define database schema based on `DATA_MODEL.md`.
+- [ ] Create database tables and relationships.
+- [ ] Configure Row Level Security (RLS).
+- [ ] Configure Supabase Storage.
+- [ ] Configure Supabase Auth.
+- [ ] Prepare initial admin access configuration.
+- [ ] Verify database connectivity.
+
+**Acceptance Criteria:**
+
+- Database schema matches `DATA_MODEL.md`.
+- Relationships and constraints work correctly.
+- RLS policies protect administrative data.
+- Storage is accessible through the intended server-side workflow.
+- Supabase Auth works correctly.
+
+## Phase 2 — Application Foundation
+
+- [ ] Create reusable UI components.
+- [ ] Establish global typography and design tokens.
+- [ ] Configure global styles.
+- [ ] Implement responsive layout foundations.
+- [ ] Create reusable form components.
+- [ ] Configure Zod validation.
+- [ ] Configure React Hook Form.
+- [ ] Implement reusable server-side data access patterns.
+- [ ] Implement consistent error handling.
+
+**Acceptance Criteria:**
+
+- Components follow `DESIGN.md`.
+- Layout works across desktop, tablet, and mobile.
+- Forms support validation.
+- Data access follows the approved architecture.
+
+## Phase 3 — Public Website
+
+### 3.1 Header & Hero
+
+- [ ] Implement header navigation.
+- [ ] Implement hero section.
+- [ ] Add navigation links to page sections.
+- [ ] Implement smooth scrolling.
+- [ ] Implement responsive navigation.
+
+### 3.2 About
+
+- [ ] Implement split About layout.
+- [ ] Display profile image.
+- [ ] Display personal introduction.
+- [ ] Implement subtle magnetic image interaction.
+- [ ] Respect touch-device interaction limitations.
+
+### 3.3 Experience
+
+- [ ] Implement editorial experience list.
+- [ ] Display period, position, and company.
+- [ ] Sort experiences from most recent to oldest.
+
+### 3.4 Work & Project Modal
+
+- [ ] Implement asymmetric editorial project grid.
+- [ ] Display project previews.
+- [ ] Display project name and short overview.
+- [ ] Display technology tags.
+- [ ] Implement project modal.
+- [ ] Display project screenshots inside the modal.
+- [ ] Display live website link.
+- [ ] Implement modal close interaction.
+- [ ] Implement smooth modal transitions.
+- [ ] Ensure modal is responsive.
+
+### 3.5 Contact & Footer
+
+- [ ] Implement bold editorial contact section.
+- [ ] Display primary email contact.
+- [ ] Display social media links.
+- [ ] Implement minimalist footer.
+- [ ] Display copyright and personal branding.
+
+**Acceptance Criteria:**
+
+- All public sections follow `DESIGN.md`.
+- Public content is retrieved from the database.
+- Projects open in a modal instead of a separate detail page.
+- All public sections are responsive.
+- Interactions work without compromising readability or performance.
+
+## Phase 4 — Authentication & Admin Dashboard
+
+### 4.1 Authentication
+
+- [ ] Implement admin login.
+- [ ] Implement logout.
+- [ ] Protect admin routes.
+- [ ] Implement server-side authentication checks.
+- [ ] Implement admin authorization using the approved allowlist approach.
+
+### 4.2 Dashboard Foundation
+
+- [ ] Create admin dashboard layout.
+- [ ] Implement sidebar or dashboard navigation.
+- [ ] Create dashboard page.
+- [ ] Implement reusable admin UI components.
+- [ ] Implement loading, empty, and error states.
+
+**Acceptance Criteria:**
+
+- Only authorized administrators can access the dashboard.
+- Public users cannot access protected admin routes.
+- Authentication and authorization are enforced server-side.
+
+## Phase 5 — CMS Functionality
+
+### 5.1 About Management
+
+- [ ] Implement About data retrieval.
+- [ ] Implement About content editing.
+- [ ] Implement profile image upload.
+- [ ] Implement profile image replacement.
+- [ ] Ensure image replacement does not delete media referenced elsewhere.
+
+### 5.2 Experience Management
+
+- [ ] Implement experience list.
+- [ ] Implement create experience.
+- [ ] Implement edit experience.
+- [ ] Implement delete experience.
+- [ ] Implement experience ordering.
+
+### 5.3 Project Management
+
+- [ ] Implement project list.
+- [ ] Implement create project.
+- [ ] Implement edit project.
+- [ ] Implement delete project.
+- [ ] Implement project screenshot upload.
+- [ ] Support multiple screenshots per project.
+- [ ] Implement project screenshot management and ordering.
+
+### 5.4 Technology Tags Management
+
+- [ ] Implement technology tag list.
+- [ ] Implement create tag.
+- [ ] Implement edit tag.
+- [ ] Implement delete tag.
+- [ ] Allow selecting existing tags when creating or editing projects.
+- [ ] Support multiple tags per project.
+- [ ] Prevent duplicate tags.
+- [ ] Ensure tags can be reused across multiple projects.
+
+### 5.5 Media Management
+
+- [ ] Implement media metadata retrieval.
+- [ ] Implement image upload to Supabase Storage.
+- [ ] Implement media metadata creation.
+- [ ] Implement media selection for About and Projects.
+- [ ] Implement media reference handling.
+- [ ] Prevent deletion of media that is still referenced.
+
+**Acceptance Criteria:**
+
+- Admin can perform CRUD operations for About, Experience, Projects, and Technology Tags.
+- Admin can upload and manage images.
+- Projects support multiple images and reusable technology tags.
+- Media references remain consistent.
+- Saved content is immediately visible on the public website.
+- No draft status, publishing workflow, or `is_published` field is implemented.
+
+## Phase 6 — Quality Assurance
+
+### 6.1 Functional Testing
+
+- [ ] Test public website navigation.
+- [ ] Test responsive layouts.
+- [ ] Test About content display.
+- [ ] Test Experience ordering.
+- [ ] Test project grid and modal.
+- [ ] Test contact and social links.
+- [ ] Test admin login and logout.
+- [ ] Test protected routes.
+- [ ] Test all CMS CRUD operations.
+- [ ] Test technology tag relationships.
+- [ ] Test image upload and replacement.
+- [ ] Test media reference integrity.
+
+### 6.2 Security & Validation
+
+- [ ] Verify server-side authorization.
+- [ ] Verify RLS policies.
+- [ ] Verify input validation.
+- [ ] Verify file upload validation.
+- [ ] Verify sensitive environment variables are not exposed to the browser.
+- [ ] Verify unauthorized users cannot perform admin actions.
+
+### 6.3 Performance & Compatibility
+
+- [ ] Check responsive behavior across screen sizes.
+- [ ] Check image optimization.
+- [ ] Check loading and error states.
+- [ ] Check interaction performance.
+- [ ] Check browser console for errors.
+- [ ] Fix identified bugs.
+
+**Acceptance Criteria:**
+
+- Core public and admin functionality works correctly.
+- No critical authorization or data integrity issues remain.
+- Application works responsively.
+- No known critical runtime errors remain.
+
+---
+
+## Development Rules
+
+1. Follow the implementation order unless a dependency requires a different sequence.
+2. Complete and validate each phase before proceeding to the next.
+3. Update this checklist as tasks are completed.
+4. Do not implement features outside the approved scope.
+5. Refer to `PRD.md`, `DESIGN.md`, `FEATURES.md`, `TECH_STACK.md`, `ARCHITECTURE.md`, `DATA_MODEL.md`, and `AGENTS.md` as the source of truth.
+6. Ask for clarification before making changes that affect approved requirements or architecture.
+
+**Out of Scope for AI Coding Agent:**
+
+- Git repository initialization and GitHub management.
+- Pushing code to GitHub.
+- Vercel project configuration.
+- Production deployment and release management.
+
+These activities will be handled manually by the project owner.
