@@ -13,14 +13,14 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ## Phase 0 — Project Initialization
 
-- [ ] Initialize Next.js project using App Router.
-- [ ] Configure TypeScript.
-- [ ] Configure Tailwind CSS.
-- [ ] Install and configure required dependencies.
-- [ ] Establish the initial project folder structure.
-- [ ] Configure environment variable handling.
-- [ ] Create the initial application layout.
-- [ ] Verify that the application runs locally.
+- [x] Initialize Next.js project using App Router.
+- [x] Configure TypeScript.
+- [x] Configure Tailwind CSS.
+- [x] Install and configure required dependencies.
+- [x] Establish the initial project folder structure.
+- [x] Configure environment variable handling.
+- [x] Create the initial application layout.
+- [x] Verify that the application runs locally.
 
 **Acceptance Criteria:**
 
