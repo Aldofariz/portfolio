@@ -31,14 +31,14 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ## Phase 1 — Supabase & Database Setup
 
-- [ ] Create Supabase client configuration.
-- [ ] Configure Supabase environment variables.
-- [ ] Define database schema based on `DATA_MODEL.md`.
-- [ ] Create database tables and relationships.
-- [ ] Configure Row Level Security (RLS).
-- [ ] Configure Supabase Storage.
-- [ ] Configure Supabase Auth.
-- [ ] Prepare initial admin access configuration.
+- [x] Create Supabase client configuration.
+- [x] Configure Supabase environment variables.
+- [x] Define database schema based on `DATA_MODEL.md`.
+- [x] Create database tables and relationships.
+- [x] Configure Row Level Security (RLS).
+- [x] Configure Supabase Storage.
+- [x] Configure Supabase Auth.
+- [x] Prepare initial admin access configuration.
 - [ ] Verify database connectivity.
 
 **Acceptance Criteria:**
@@ -51,15 +51,15 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ## Phase 2 — Application Foundation
 
-- [ ] Create reusable UI components.
-- [ ] Establish global typography and design tokens.
-- [ ] Configure global styles.
-- [ ] Implement responsive layout foundations.
-- [ ] Create reusable form components.
-- [ ] Configure Zod validation.
-- [ ] Configure React Hook Form.
-- [ ] Implement reusable server-side data access patterns.
-- [ ] Implement consistent error handling.
+- [x] Create reusable UI components.
+- [x] Establish global typography and design tokens.
+- [x] Configure global styles.
+- [x] Implement responsive layout foundations.
+- [x] Create reusable form components.
+- [x] Configure Zod validation.
+- [x] Configure React Hook Form.
+- [x] Implement reusable server-side data access patterns.
+- [x] Implement consistent error handling.
 
 **Acceptance Criteria:**
 
@@ -72,46 +72,46 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ### 3.1 Header & Hero
 
-- [ ] Implement header navigation.
-- [ ] Implement hero section.
-- [ ] Add navigation links to page sections.
-- [ ] Implement smooth scrolling.
-- [ ] Implement responsive navigation.
+- [x] Implement header navigation.
+- [x] Implement hero section.
+- [x] Add navigation links to page sections.
+- [x] Implement smooth scrolling.
+- [x] Implement responsive navigation.
 
 ### 3.2 About
 
-- [ ] Implement split About layout.
-- [ ] Display profile image.
-- [ ] Display personal introduction.
-- [ ] Implement subtle magnetic image interaction.
-- [ ] Respect touch-device interaction limitations.
+- [x] Implement split About layout.
+- [x] Display profile image.
+- [x] Display personal introduction.
+- [x] Implement subtle magnetic image interaction.
+- [x] Respect touch-device interaction limitations.
 
 ### 3.3 Experience
 
-- [ ] Implement editorial experience list.
-- [ ] Display period, position, and company.
-- [ ] Sort experiences from most recent to oldest.
+- [x] Implement editorial experience list.
+- [x] Display period, position, and company.
+- [x] Sort experiences from most recent to oldest.
 
 ### 3.4 Work & Project Modal
 
-- [ ] Implement asymmetric editorial project grid.
-- [ ] Display project previews.
-- [ ] Display project name and short overview.
-- [ ] Display technology tags.
-- [ ] Implement project modal.
-- [ ] Display project screenshots inside the modal.
-- [ ] Display live website link.
-- [ ] Implement modal close interaction.
-- [ ] Implement smooth modal transitions.
-- [ ] Ensure modal is responsive.
+- [x] Implement asymmetric editorial project grid.
+- [x] Display project previews.
+- [x] Display project name and short overview.
+- [x] Display technology tags.
+- [x] Implement project modal.
+- [x] Display project screenshots inside the modal.
+- [x] Display live website link.
+- [x] Implement modal close interaction.
+- [x] Implement smooth modal transitions.
+- [x] Ensure modal is responsive.
 
 ### 3.5 Contact & Footer
 
-- [ ] Implement bold editorial contact section.
-- [ ] Display primary email contact.
-- [ ] Display social media links.
-- [ ] Implement minimalist footer.
-- [ ] Display copyright and personal branding.
+- [x] Implement bold editorial contact section.
+- [x] Display primary email contact.
+- [x] Display social media links.
+- [x] Implement minimalist footer.
+- [x] Display copyright and personal branding.
 
 **Acceptance Criteria:**
 
