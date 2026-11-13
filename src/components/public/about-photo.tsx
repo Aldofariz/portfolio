@@ -66,7 +66,7 @@ export function AboutPhoto({ imageUrl, altText }: AboutPhotoProps) {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full aspect-[4/5] sm:aspect-[3/4] bg-stone-100 border border-editorial-border overflow-hidden select-none"
+      className="relative w-full aspect-4/5 sm:aspect-3/4 bg-stone-100 border border-editorial-border overflow-hidden select-none"
     >
       <motion.div
         style={{

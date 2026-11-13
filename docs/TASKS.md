@@ -39,7 +39,7 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 - [x] Configure Supabase Storage.
 - [x] Configure Supabase Auth.
 - [x] Prepare initial admin access configuration.
-- [ ] Verify database connectivity.
+- [x] Verify database connectivity.
 
 **Acceptance Criteria:**
 
@@ -206,36 +206,36 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ### 6.1 Functional Testing
 
-- [ ] Test public website navigation.
-- [ ] Test responsive layouts.
-- [ ] Test About content display.
-- [ ] Test Experience ordering.
-- [ ] Test project grid and modal.
-- [ ] Test contact and social links.
-- [ ] Test admin login and logout.
-- [ ] Test protected routes.
-- [ ] Test all CMS CRUD operations.
-- [ ] Test technology tag relationships.
-- [ ] Test image upload and replacement.
-- [ ] Test media reference integrity.
+- [x] Test public website navigation.
+- [x] Test responsive layouts.
+- [x] Test About content display.
+- [x] Test Experience ordering.
+- [x] Test project grid and modal.
+- [x] Test contact and social links.
+- [x] Test admin login and logout.
+- [x] Test protected routes.
+- [x] Test all CMS CRUD operations.
+- [x] Test technology tag relationships.
+- [x] Test image upload and replacement.
+- [x] Test media reference integrity.
 
 ### 6.2 Security & Validation
 
-- [ ] Verify server-side authorization.
-- [ ] Verify RLS policies.
-- [ ] Verify input validation.
-- [ ] Verify file upload validation.
-- [ ] Verify sensitive environment variables are not exposed to the browser.
-- [ ] Verify unauthorized users cannot perform admin actions.
+- [x] Verify server-side authorization.
+- [x] Verify RLS policies.
+- [x] Verify input validation.
+- [x] Verify file upload validation.
+- [x] Verify sensitive environment variables are not exposed to the browser.
+- [x] Verify unauthorized users cannot perform admin actions.
 
 ### 6.3 Performance & Compatibility
 
-- [ ] Check responsive behavior across screen sizes.
-- [ ] Check image optimization.
-- [ ] Check loading and error states.
-- [ ] Check interaction performance.
-- [ ] Check browser console for errors.
-- [ ] Fix identified bugs.
+- [x] Check responsive behavior across screen sizes.
+- [x] Check image optimization.
+- [x] Check loading and error states.
+- [x] Check interaction performance.
+- [x] Check browser console for errors.
+- [x] Fix identified bugs.
 
 **Acceptance Criteria:**
 

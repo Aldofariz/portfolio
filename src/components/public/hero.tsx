@@ -7,11 +7,11 @@ export function Hero() {
         <div className="lg:col-span-8 space-y-6">
           <div className="inline-block">
             <span className="font-mono text-xs uppercase tracking-widest text-editorial-accent">
-              Informatics Engineering Graduate // Fullstack & Frontend
+              Informatics Engineering Graduate
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter text-editorial-fg leading-[0.9] select-none">
+          <h1 className="text-5xl sm:text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tighter text-editorial-fg leading-[0.9] select-none">
             SOFTWARE<br />
             ENGINEER<span className="text-editorial-accent">.</span>
           </h1>

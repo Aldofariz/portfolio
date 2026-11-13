@@ -2,11 +2,11 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export function ContactSection() {
-  const emailAddress = "engineer@example.com";
+  const emailAddress = "aldofarizfadilla@gmail.com";
   const socialLinks = [
-    { label: "GitHub", href: "https://github.com", external: true },
-    { label: "LinkedIn", href: "https://linkedin.com", external: true },
-    { label: "Resume", href: "#", external: false },
+    { label: "GitHub", href: "https://github.com/aldofariz", external: true },
+    { label: "LinkedIn", href: "https://linkedin.com/in/aldofariz", external: true },
+    { label: "Resume", href: "https://drive.google.com/file/d/1xxfF4rIKOOoW7EF1sQio924h28fHfWIr/view?usp=sharing", external: false },
   ];
 
   return (

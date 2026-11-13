@@ -30,7 +30,7 @@ export function AboutSection({ about, experiences }: AboutSectionProps) {
       {/* Split Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: Personal Photograph */}
-        <div className="lg:col-span-5 sticky top-12">
+        <div className="lg:col-span-5 lg:sticky lg:top-12">
           <AboutPhoto
             imageUrl={profileImageUrl}
             altText={about?.profile_media?.alt_text || "Profile photograph"}
@@ -53,7 +53,7 @@ export function AboutSection({ about, experiences }: AboutSectionProps) {
             </p>
             <div className="pt-2">
               <span className="inline-block text-xs font-mono uppercase tracking-wider text-editorial-muted border-l-2 border-editorial-accent pl-3">
-                Education: Informatics Engineering Graduate (Fresh Graduate)
+                Education: Informatics Engineering at Universitas Islam Nusantara
               </span>
             </div>
           </div>

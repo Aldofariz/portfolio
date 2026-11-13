@@ -15,7 +15,7 @@ export async function getPublicAbout(): Promise<About | null> {
         introduction,
         profile_media_id,
         updated_at,
-        profile_media:profile_media_id (
+        profile_media:media!about_profile_media_id_fkey (
           id,
           storage_path,
           original_filename,
