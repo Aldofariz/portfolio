@@ -149,49 +149,49 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ### 5.1 About Management
 
-- [ ] Implement About data retrieval.
-- [ ] Implement About content editing.
-- [ ] Implement profile image upload.
-- [ ] Implement profile image replacement.
-- [ ] Ensure image replacement does not delete media referenced elsewhere.
+- [x] Implement About data retrieval.
+- [x] Implement About content editing.
+- [x] Implement profile image upload.
+- [x] Implement profile image replacement.
+- [x] Ensure image replacement does not delete media referenced elsewhere.
 
 ### 5.2 Experience Management
 
-- [ ] Implement experience list.
-- [ ] Implement create experience.
-- [ ] Implement edit experience.
-- [ ] Implement delete experience.
-- [ ] Implement experience ordering.
+- [x] Implement experience list.
+- [x] Implement create experience.
+- [x] Implement edit experience.
+- [x] Implement delete experience.
+- [x] Implement experience ordering.
 
 ### 5.3 Project Management
 
-- [ ] Implement project list.
-- [ ] Implement create project.
-- [ ] Implement edit project.
-- [ ] Implement delete project.
-- [ ] Implement project screenshot upload.
-- [ ] Support multiple screenshots per project.
-- [ ] Implement project screenshot management and ordering.
+- [x] Implement project list.
+- [x] Implement create project.
+- [x] Implement edit project.
+- [x] Implement delete project.
+- [x] Implement project screenshot upload.
+- [x] Support multiple screenshots per project.
+- [x] Implement project screenshot management and ordering.
 
 ### 5.4 Technology Tags Management
 
-- [ ] Implement technology tag list.
-- [ ] Implement create tag.
-- [ ] Implement edit tag.
-- [ ] Implement delete tag.
-- [ ] Allow selecting existing tags when creating or editing projects.
-- [ ] Support multiple tags per project.
-- [ ] Prevent duplicate tags.
-- [ ] Ensure tags can be reused across multiple projects.
+- [x] Implement technology tag list.
+- [x] Implement create tag.
+- [x] Implement edit tag.
+- [x] Implement delete tag.
+- [x] Allow selecting existing tags when creating or editing projects.
+- [x] Support multiple tags per project.
+- [x] Prevent duplicate tags.
+- [x] Ensure tags can be reused across multiple projects.
 
 ### 5.5 Media Management
 
-- [ ] Implement media metadata retrieval.
-- [ ] Implement image upload to Supabase Storage.
-- [ ] Implement media metadata creation.
-- [ ] Implement media selection for About and Projects.
-- [ ] Implement media reference handling.
-- [ ] Prevent deletion of media that is still referenced.
+- [x] Implement media metadata retrieval.
+- [x] Implement image upload to Supabase Storage.
+- [x] Implement media metadata creation.
+- [x] Implement media selection for About and Projects.
+- [x] Implement media reference handling.
+- [x] Prevent deletion of media that is still referenced.
 
 **Acceptance Criteria:**
 
