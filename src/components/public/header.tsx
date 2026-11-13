@@ -25,10 +25,10 @@ export function Header() {
         ))}
         <Link
           href="/admin/login"
-          className="text-stone-400 hover:text-editorial-accent transition-colors"
-          title="Admin CMS"
+          className="text-stone-400 hover:text-editorial-accent transition-colors text-sm font-medium tracking-normal select-none opacity-60 hover:opacity-100"
+          aria-label="Editorial"
         >
-          [Admin]
+          編
         </Link>
       </nav>
     </header>

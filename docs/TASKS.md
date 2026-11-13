@@ -125,19 +125,19 @@ Dokumen ini menjadi checklist implementasi portfolio website. AI coding agent ha
 
 ### 4.1 Authentication
 
-- [ ] Implement admin login.
-- [ ] Implement logout.
-- [ ] Protect admin routes.
-- [ ] Implement server-side authentication checks.
-- [ ] Implement admin authorization using the approved allowlist approach.
+- [x] Implement admin login.
+- [x] Implement logout.
+- [x] Protect admin routes.
+- [x] Implement server-side authentication checks.
+- [x] Implement admin authorization using the approved allowlist approach.
 
 ### 4.2 Dashboard Foundation
 
-- [ ] Create admin dashboard layout.
-- [ ] Implement sidebar or dashboard navigation.
-- [ ] Create dashboard page.
-- [ ] Implement reusable admin UI components.
-- [ ] Implement loading, empty, and error states.
+- [x] Create admin dashboard layout.
+- [x] Implement sidebar or dashboard navigation.
+- [x] Create dashboard page.
+- [x] Implement reusable admin UI components.
+- [x] Implement loading, empty, and error states.
 
 **Acceptance Criteria:**
 
