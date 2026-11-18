@@ -1,5 +1,3 @@
-# README.md
-
 # Personal Developer Portfolio
 
 A personal portfolio website for showcasing professional background, experience, and selected projects as a Software Engineer.
@@ -69,25 +67,6 @@ All content changes are immediately reflected on the public website after being 
 | Form Management | React Hook Form                         |
 | Hosting         | Vercel                                  |
 
-Refer to `TECH_STACK.md` for the approved technology details.
-
-## Project Documentation
-
-The project documentation is organized as follows:
-
-| Document          | Description                                             |
-| ----------------- | ------------------------------------------------------- |
-| `PRD.md`          | Product requirements and project scope                  |
-| `DESIGN.md`       | Visual direction, layout, typography, and interactions  |
-| `FEATURES.md`     | Public website and CMS functionality                    |
-| `TECH_STACK.md`   | Technology choices and dependencies                     |
-| `ARCHITECTURE.md` | Application architecture and folder structure           |
-| `DATA_MODEL.md`   | Database entities, relationships, and constraints       |
-| `TASKS.md`        | Development checklist and acceptance criteria           |
-| `AGENTS.md`       | Instructions and development rules for AI coding agents |
-
-Read these documents before implementing features or modifying the architecture.
-
 ## Prerequisites
 
 Make sure the following tools are installed:
@@ -128,9 +107,7 @@ Fill in the values from your Supabase project settings.
 
 ### 3. Configure Supabase
 
-Follow `DATA_MODEL.md` and `ARCHITECTURE.md` to configure the Supabase project.
-
-Required setup:
+Configure the Supabase project with the database schema and policies required by the application:
 
 - Create the database tables and relationships.
 - Configure constraints and indexes.
@@ -138,8 +115,6 @@ Required setup:
 - Configure Supabase Storage.
 - Configure authentication.
 - Configure the admin allowlist and initial admin access.
-
-Use the approved database schema as the source of truth. Do not introduce additional tables or fields without approval.
 
 ### 4. Run the Development Server
 
@@ -175,31 +150,6 @@ npm run start
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase client key                        | Public      |
 | `SUPABASE_SERVICE_ROLE_KEY`     | Privileged server-side Supabase operations | Server-only |
 
-Additional environment variables may be introduced only when required by the approved architecture.
-
-## Content Publishing Behavior
-
-This project uses an immediate publishing model.
-
-- Saving About changes updates the public About section.
-- Saving an Experience entry makes it visible publicly.
-- Saving a Project makes it visible in the public project grid.
-- No draft status or manual publishing workflow exists.
-- No `is_published` field is used.
-
-## Development Guidelines
-
-Before making changes:
-
-1. Read the project documentation.
-2. Understand the existing application structure.
-3. Check the relevant database entities and relationships.
-4. Follow the design system and approved requirements.
-5. Implement incrementally.
-6. Validate changes before marking tasks as completed.
-7. Update `TASKS.md` after completing tasks.
-
-Refer to `AGENTS.md` for detailed AI coding agent instructions.
 
 ## Scope Limitations
 
@@ -210,8 +160,6 @@ The current project scope does not include:
 - Draft and publishing workflows.
 - Multi-role administration.
 - Advanced analytics dashboard.
-
-Do not add these features without explicit approval.
 
 ## License
 
