@@ -7,7 +7,7 @@ export function Hero() {
         <div className="lg:col-span-8 space-y-6">
           <div className="inline-block">
             <span className="font-mono text-xs uppercase tracking-widest text-editorial-accent">
-              Informatics Engineering Graduate
+              Aldo Fariz Fadilla // Informatics Engineering Graduate
             </span>
           </div>
 
@@ -19,7 +19,7 @@ export function Hero() {
 
         <div className="lg:col-span-4 space-y-6 lg:pt-6">
           <p className="text-base sm:text-lg text-editorial-muted leading-relaxed font-normal">
-            Bridging resilient distributed systems, modern frontend architecture, and design awareness. Focused on crafting disciplined, high-impact digital experiences.
+            Bridging resilient distributed systems, modern software architecture, and design awareness. Focused on crafting disciplined, high-impact digital experiences.
           </p>
 
           <div className="pt-4 flex items-center space-x-6 text-xs font-mono uppercase tracking-wider text-editorial-fg">

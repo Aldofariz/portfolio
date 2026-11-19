@@ -48,6 +48,7 @@ export function AboutSection({ about, experiences }: AboutSectionProps) {
             <h3 className="font-mono text-xs uppercase tracking-widest text-editorial-accent">
               01. Introduction
             </h3>
+            <h1 className="text-xl sm:text-2xl font-semibold ">Aldo Fariz Fadilla</h1>
             <p className="text-xl sm:text-2xl text-editorial-fg font-normal leading-relaxed tracking-tight">
               {introduction}
             </p>
