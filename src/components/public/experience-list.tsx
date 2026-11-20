@@ -4,61 +4,39 @@ interface ExperienceListProps {
   experiences: Experience[];
 }
 
+function yearOf(date: string): string {
+  // Database values are ISO dates; reading the leading year avoids timezone shifts.
+  const isoYear = /^(\d{4})/.exec(date)?.[1];
+  return isoYear ?? date;
+}
+
 function formatPeriod(exp: Experience): string {
-  const getYear = (dateStr: string) => {
-    try {
-      return new Date(dateStr).getFullYear();
-    } catch {
-      return dateStr;
-    }
-  };
+  const startYear = yearOf(exp.start_date);
+  if (exp.is_current || !exp.end_date) return `${startYear} — Present`;
+  return `${startYear} — ${yearOf(exp.end_date)}`;
+}
 
-  const startYear = getYear(exp.start_date);
-  if (exp.is_current || !exp.end_date) {
-    return `${startYear} — PRESENT`;
-  }
-
-  const endYear = getYear(exp.end_date);
-  return `${startYear} — ${endYear}`;
+function orderedExperiences(experiences: Experience[]): Experience[] {
+  return [...experiences].sort((a, b) => {
+    const order = a.display_order - b.display_order;
+    if (order) return order;
+    const startDate = b.start_date.localeCompare(a.start_date);
+    if (startDate) return startDate;
+    return a.id.localeCompare(b.id);
+  });
 }
 
 export function ExperienceList({ experiences }: ExperienceListProps) {
-  if (experiences.length === 0) {
-    return (
-      <div className="py-8 text-sm text-editorial-muted font-mono">
-        [No experience records available]
-      </div>
-    );
-  }
+  if (experiences.length === 0) return null;
 
   return (
-    <div className="divide-y divide-editorial-border border-y border-editorial-border">
-      {experiences.map((exp) => (
-        <div
-          key={exp.id}
-          className="py-5 sm:py-6 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6 items-baseline group hover:bg-stone-50/50 transition-colors"
-        >
-          {/* Period */}
-          <div className="sm:col-span-4">
-            <span className="font-mono text-xs uppercase tracking-wider text-editorial-muted font-normal">
-              {formatPeriod(exp)}
-            </span>
-          </div>
-
-          {/* Position */}
-          <div className="sm:col-span-5">
-            <h4 className="text-base sm:text-lg font-semibold tracking-tight text-editorial-fg">
-              {exp.position}
-            </h4>
-          </div>
-
-          {/* Company */}
-          <div className="sm:col-span-3 text-left sm:text-right">
-            <span className="text-sm font-medium text-editorial-muted">
-              {exp.company}
-            </span>
-          </div>
-        </div>
+    <div className="experience-list">
+      {orderedExperiences(experiences).map((exp) => (
+        <article className="experience-row" key={exp.id}>
+          <p className="experience-period">{formatPeriod(exp)}</p>
+          <h3 className="experience-position">{exp.position}</h3>
+          <p className="experience-company"><span>{exp.company}</span></p>
+        </article>
       ))}
     </div>
   );

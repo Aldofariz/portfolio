@@ -1,6 +1,7 @@
 import type { About, Experience } from "@/types/database";
-import { AboutPhoto } from "./about-photo";
 import { ExperienceList } from "./experience-list";
+import { AboutScrapbook } from "./about-scrapbook";
+import { AboutStatement } from "./about-statement";
 import { getMediaPublicUrl } from "@/lib/utils/media";
 
 interface AboutSectionProps {
@@ -9,70 +10,35 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ about, experiences }: AboutSectionProps) {
-  const profileImageUrl = getMediaPublicUrl(about?.profile_media?.storage_path);
-
-  const introduction =
-    about?.introduction ||
-    "Software Engineer focusing on performant fullstack architectures, thoughtful interface engineering, and system reliability. Experienced across frontend ecosystems, backend development, and product design.";
+  const photoUrl = getMediaPublicUrl(about?.profile_media?.storage_path);
 
   return (
-    <section id="about" className="py-20 md:py-32 border-b border-editorial-border">
-      {/* Section Header */}
-      <div className="mb-12 md:mb-16">
-        <span className="font-mono text-xs uppercase tracking-widest text-editorial-muted">
-          Index 01 // Background
-        </span>
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-editorial-fg mt-2">
-          ABOUT & CAREER.
-        </h2>
-      </div>
+    <section id="about" className="about-scope about-section border-b border-editorial-border">
+      <svg className="about-svg-definitions" aria-hidden="true" focusable="false">
+        <filter id="about-torn-a" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" seed="3" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="about-torn-b" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="11" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="about-torn-mobile" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="19" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
 
-      {/* Split Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Left Column: Personal Photograph */}
-        <div className="lg:col-span-5 lg:sticky lg:top-12">
-          <AboutPhoto
-            imageUrl={profileImageUrl}
-            altText={about?.profile_media?.alt_text || "Profile photograph"}
-          />
-          <div className="mt-4 flex justify-between items-center text-xs font-mono text-editorial-muted">
-            <span>DISCIPLINE</span>
-            <span className="text-editorial-fg">Engineering & Design</span>
-          </div>
-        </div>
+      <div className="about-section-inner">
+        <AboutStatement />
+        <AboutScrapbook bio={about?.introduction ?? ""} photoUrl={photoUrl} />
 
-        {/* Right Column: Bio & Experience */}
-        <div className="lg:col-span-7 space-y-16">
-          {/* Biography Subsection */}
-          <div className="space-y-6">
-            <h3 className="font-mono text-xs uppercase tracking-widest text-editorial-accent">
-              01. Introduction
-            </h3>
-            <h1 className="text-xl sm:text-2xl font-semibold ">Aldo Fariz Fadilla</h1>
-            <p className="text-xl sm:text-2xl text-editorial-fg font-normal leading-relaxed tracking-tight">
-              {introduction}
-            </p>
-            <div className="pt-2">
-              <span className="inline-block text-xs font-mono uppercase tracking-wider text-editorial-muted border-l-2 border-editorial-accent pl-3">
-                Education: Informatics Engineering at Universitas Islam Nusantara
-              </span>
-            </div>
-          </div>
-
-          {/* Experience Subsection */}
-          <div className="space-y-6 pt-4 border-t border-editorial-border">
-            <div className="flex justify-between items-baseline">
-              <h3 className="font-mono text-xs uppercase tracking-widest text-editorial-accent">
-                02. Experience
-              </h3>
-              <span className="text-xs font-mono text-editorial-muted">
-                (Chronological)
-              </span>
-            </div>
-
+        {experiences.length > 0 && (
+          <div className="about-experience">
+            <h2 className="about-experience-title font-display">Experience</h2>
             <ExperienceList experiences={experiences} />
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
