@@ -1,45 +1,209 @@
-import { ArrowDownRight } from "lucide-react";
+"use client";
+
+import * as React from "react";
+import Image from "next/image";
+import {
+  MotionConfig,
+  motion,
+  useAnimationControls,
+  useReducedMotion,
+} from "motion/react";
+import { HERO_CONTENT, type HeroIconKey } from "@/lib/constants/hero-content";
+
+const ICONS: Record<HeroIconKey, string> = {
+  idCard: "/icons/hero/id-card.png",
+  laptop: "/icons/hero/laptop.png",
+  gear: "/icons/hero/gear.png",
+  brick: "/icons/hero/brick.png",
+  palette: "/icons/hero/palette.png",
+  rocket: "/icons/hero/rocket.png",
+  coffee: "/icons/hero/coffee.png",
+};
+
+const wordVariants = {
+  hidden: { opacity: 0, y: "0.6em" },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.34,
+      ease: [0.22, 1, 0.36, 1] as const,
+      delay: 0.08 + index * 0.017,
+    },
+  }),
+};
+
+const iconVariants = {
+  hidden: { scale: 0, rotate: -12 },
+  visible: (index: number) => ({
+    scale: 1,
+    rotate: 0,
+    transition: {
+      type: "spring" as const,
+      stiffness: 260,
+      damping: 16,
+      delay: 0.86 + index * 0.065,
+    },
+  }),
+};
+
+const fadeVariants = {
+  hidden: { opacity: 0 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    transition: { duration: 0.38, delay },
+  }),
+};
+
+function HeroIcon({
+  icon,
+  index,
+  canHover,
+  reducedMotion,
+  controls,
+}: {
+  icon: HeroIconKey;
+  index: number;
+  canHover: boolean;
+  reducedMotion: boolean;
+  controls: ReturnType<typeof useAnimationControls>;
+}) {
+  const hoverEnabled = canHover && !reducedMotion;
+
+  return (
+    <motion.span
+      aria-hidden="true"
+      className="hero-icon"
+      whileHover={
+        hoverEnabled
+          ? {
+              scale: 1.5,
+              rotate: index % 2 === 0 ? 8 : -8,
+              zIndex: 2,
+              transition: { type: "spring", stiffness: 300, damping: 14 },
+            }
+          : undefined
+      }
+    >
+      <motion.span
+        animate={controls}
+        className="hero-icon-art"
+        custom={index}
+        initial={false}
+        variants={iconVariants}
+      >
+        <Image src={ICONS[icon]} alt="" width={160} height={160} priority />
+      </motion.span>
+    </motion.span>
+  );
+}
 
 export function Hero() {
+  const controls = useAnimationControls();
+  const prefersReducedMotion = useReducedMotion();
+  const reducedMotion = Boolean(prefersReducedMotion);
+  const [canHover, setCanHover] = React.useState(false);
+
+  React.useEffect(() => {
+    const pointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const updatePointer = () => setCanHover(pointerQuery.matches);
+    updatePointer();
+    pointerQuery.addEventListener("change", updatePointer);
+
+    if (reducedMotion) {
+      controls.set("visible");
+    } else {
+      controls.set("hidden");
+      controls.start("visible");
+    }
+
+    return () => pointerQuery.removeEventListener("change", updatePointer);
+  }, [controls, reducedMotion]);
+
+  let iconIndex = 0;
+
   return (
-    <section className="py-20 md:py-32 border-b border-editorial-border">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-baseline">
-        <div className="lg:col-span-8 space-y-6">
-          <div className="inline-block">
-            <span className="font-mono text-xs uppercase tracking-widest text-editorial-accent">
-              Aldo Fariz Fadilla // Informatics Engineering Graduate
-            </span>
-          </div>
+    <MotionConfig reducedMotion="user">
+      <section className="hero-section border-b border-editorial-border">
+        <div className="hero-content">
+          <motion.p
+            animate={controls}
+            className="hero-availability"
+            initial={false}
+            custom={0}
+            variants={fadeVariants}
+          >
+            <HeroIcon
+              icon="idCard"
+              index={iconIndex++}
+              canHover={canHover}
+              reducedMotion={reducedMotion}
+              controls={controls}
+            />
+            <span>{HERO_CONTENT.availability}</span>
+          </motion.p>
 
-          <h1 className="text-5xl sm:text-7xl md:text-7xl lg:text-9xl font-extrabold tracking-tighter text-editorial-fg leading-[0.9] select-none">
-            SOFTWARE<br />
-            ENGINEER<span className="text-editorial-accent">.</span>
+          <h1 className="hero-headline font-display">
+            {HERO_CONTENT.headline.map((word, index) => (
+              <React.Fragment key={`${word.text}-${index}`}>
+                <motion.span
+                  animate={controls}
+                  className={`hero-word${word.italic ? " hero-word-italic" : ""}`}
+                  custom={index}
+                  initial={false}
+                  variants={wordVariants}
+                >
+                  {word.text}
+                  {word.iconAfter && (
+                    <HeroIcon
+                      icon={word.iconAfter}
+                      index={iconIndex++}
+                      canHover={canHover}
+                      reducedMotion={reducedMotion}
+                      controls={controls}
+                    />
+                  )}
+                </motion.span>{" "}
+              </React.Fragment>
+            ))}
           </h1>
-        </div>
 
-        <div className="lg:col-span-4 space-y-6 lg:pt-6">
-          <p className="text-base sm:text-lg text-editorial-muted leading-relaxed font-normal">
-            Bridging resilient distributed systems, modern software architecture, and design awareness. Focused on crafting disciplined, high-impact digital experiences.
-          </p>
+          <motion.p
+            animate={controls}
+            className="hero-subtext"
+            custom={0.88}
+            initial={false}
+            variants={fadeVariants}
+          >
+            {HERO_CONTENT.subtext}
+          </motion.p>
 
-          <div className="pt-4 flex items-center space-x-6 text-xs font-mono uppercase tracking-wider text-editorial-fg">
-            <a
-              href="#work"
-              className="group inline-flex items-center space-x-1 hover:text-editorial-accent transition-colors"
-            >
-              <span>Selected Works</span>
-              <ArrowDownRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
+          <motion.div
+            animate={controls}
+            className="hero-actions"
+            custom={0.92}
+            initial={false}
+            variants={fadeVariants}
+          >
+            <a className="hero-button hero-button-primary" href="#work">
+              {HERO_CONTENT.primaryAction}
             </a>
-            <span className="text-editorial-border">|</span>
-            <a
-              href="#about"
-              className="hover:text-editorial-accent transition-colors"
-            >
-              Profile & Experience
+            <a className="hero-button hero-button-secondary" href="#about">
+              {HERO_CONTENT.secondaryAction}
             </a>
-          </div>
+          </motion.div>
+
+          <motion.p
+            animate={controls}
+            className="hero-badge"
+            custom={0.92}
+            initial={false}
+            variants={fadeVariants}
+          >
+            {HERO_CONTENT.badge}
+          </motion.p>
         </div>
-      </div>
-    </section>
+      </section>
+    </MotionConfig>
   );
 }
